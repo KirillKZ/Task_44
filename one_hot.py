@@ -2,17 +2,20 @@
 
 import random
 import pandas as pd
-#Метод для создания списка и создания словаря, который может представлен в виде One_Hot 
-def oneHot():
+
+def listCreate():
   lst = ['robot'] * 10
   lst += ['human'] * 10
+  lst += ['animal'] * 10
   random.shuffle(lst)
+  return lst
 
-  st = set(lst) #набор со списком уникальных значений
-  st = list(st) #Списко с тем же набором уникальных значения
-  col = [] #Список для значений столбца
-  tbl = [] #Список для значения списков со значениями столбцов
-  data = {} #Словарь для хранения заголовка столбца и его названия
+def oneHot(lst):
+  st = set(lst)
+  st = list(st)
+  col = []
+  tbl = []
+  data = {}
 
   for k in st:
       for i in lst:
@@ -26,5 +29,9 @@ def oneHot():
     data[st[i]] = tbl[i]
   return data
 
-df = pd.DataFrame(oneHot())
+df = pd.DataFrame(oneHot(listCreate()))
 df
+
+
+
+
