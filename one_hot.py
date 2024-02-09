@@ -17,9 +17,6 @@ print(data)
 
 ##Еще один вариант
 import random
-lst = ['robot'] * 10
-lst += ['human'] * 10
-random.shuffle(lst)
 st = set(lst)
 strn = ""
 print(f'       {st}')
